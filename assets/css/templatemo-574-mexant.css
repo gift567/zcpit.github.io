@@ -612,10 +612,6 @@ header
 }
 
 @media (max-width: 767px) {
-
-
-
-  
   .header-area .main-nav .logo {
     color: #1e1e1e;
   }
@@ -722,8 +718,6 @@ header
   .header-area .main-nav .nav {
     display: flex !important;
   }
-
-
 }
 
 
@@ -793,7 +787,7 @@ banner
 .slide-inner .header-text h2 {
   position: relative;
   z-index: 2;
-  font-size: 37px;
+  font-size: 47px;
   color: #fff;
   font-weight: 700;
   opacity: 1;
