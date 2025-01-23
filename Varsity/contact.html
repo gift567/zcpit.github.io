@@ -39,50 +39,91 @@
   </head>
 
   <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f9;
+    /* General styles */
+ 
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        width: 100%;
+        padding: 80px;
+        background-color: #ffffff;
     }
-    .container {
-        max-width: 600px;
-        margin: 50px auto;
-        background: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .container h1 {
-        text-align: center;
+
+    .card {
+        background: #f1f1f1;
         color: #333;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        flex: 1 1 calc(33.333% - 40px); /* 3 cards in a row, with a gap */
+        max-width: 350px;
+        transition: transform 0.3s ease;
     }
-    .form-group {
-        margin-bottom: 15px;
-    }
-    .form-group label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-    .form-group input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-    .form-group button {
-        width: 100%;
-        padding: 10px;
-        background-color: #007BFF;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        font-size: 16px;
+
+    .card:hover {
+        transform: translateY(-10px);
         cursor: pointer;
     }
-    .form-group button:hover {
-        background-color: #0056b3;
+
+    .avatar {
+        width: 80px;
+        height: 80px;
+        background: #f3f3f3;
+        border-radius: 50%;
+        margin: 0 auto 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .avatar img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+
+    h2 {
+        margin: 10px 0;
+        font-size: 1.5em;
+    }
+
+    p {
+        margin: 5px 0;
+        font-size: 1em;
+    }
+
+    .button {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: #6a11cb;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: bold;
+        border-radius: 25px;
+        transition: background 0.3s ease;
+    }
+
+    .button:hover {
+        background: #2575fc;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .card {
+            flex: 1 1 calc(50% - 20px); /* 2 cards in a row */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .card {
+            flex: 1 1 100%; /* 1 card in a row */
+        }
     }
 </style>
 
@@ -105,11 +146,11 @@
                 <div class="mu-header-top-left">
                   <div class="mu-top-email">
                     <i class="fa fa-envelope"></i>
-                    <span>info@markups.io</span>
+                    <span>info@zcpit.com</span>
                   </div>
                   <div class="mu-top-phone">
                     <i class="fa fa-phone"></i>
-                    <span>(568) 986 652</span>
+                    <span>+260 975637373</span>
                   </div>
                 </div>
               </div>
@@ -117,11 +158,12 @@
                 <div class="mu-header-top-right">
                   <nav>
                     <ul class="mu-top-social-nav">
+                      <li><a href="#"><span class="fa fa-whatsapp"></span></a></li>
                       <li><a href="#"><span class="fa fa-facebook"></span></a></li>
                       <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                      <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
                       <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                      <li><a href="#"><span class="fa fa-youtube"></span></a></li>
+                     
+                     
                     </ul>
                   </nav>
                 </div>
@@ -135,7 +177,8 @@
   <!-- End header  -->
   <!-- Start menu -->
   <section id="mu-menu">
-    <nav class="navbar navbar-default" role="navigation">  
+
+     <nav class="navbar navbar-default" role="navigation">  
       <div class="container">
         <div class="navbar-header">
           <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
@@ -147,52 +190,42 @@
           </button>
           <!-- LOGO -->              
           <!-- TEXT BASED LOGO -->
-          <a class="navbar-brand" href="index.html"><i class="fa fa-university"></i><span>Varsity</span></a>
+          <a class="navbar-brand" href="index.html"><img src="../assets/images/zcpitlogo.jpg"></a>
           <!-- IMG BASED LOGO  -->
           <!-- <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="logo"></a> -->
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-            <li><a href="index.html">Home</a></li>            
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Course <span class="fa fa-angle-down"></span></a>
+            <li><a href="../index.html">Home</a></li>  
+
+            <li class="dropdown active">
+              <a href="#" class="dropdown-toggle active" data-toggle="dropdown">Course <span class="fa fa-angle-down"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="course.html">Course Archive</a></li>                
-                <li><a href="course-detail.html">Course Detail</a></li>                
+                <li><a href="course.html">Conventional Courses</a></li>                
+                <li><a href="short-courses.html">Short Courses</a></li>                
               </ul>
-            </li>           
-            <li><a href="gallery.html">Gallery</a></li>
+            </li>      
+                 
+            <li><a href="../about-us.html">About</a></li>
+
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <span class="fa fa-angle-down"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Student Life <span class="fa fa-angle-down"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="blog-archive.html">Blog Archive</a></li>                
-                <li><a href="blog-single.html">Blog Single</a></li>                
+                <li><a href="#">Students</a></li>                
+                <li><a href="#">Aluminia</a></li>                
               </ul>
-            </li>            
-            <li class="active"><a href="contact.html">Contact</a></li>
-            <li><a href="404.html">404 Page</a></li>               
-            <li><a href="#" id="mu-search-icon"><i class="fa fa-search"></i></a></li>
+            </li>   
+
+            <li><a href="#">Contact</a></li>
+          
           </ul>                   
         </div><!--/.nav-collapse -->        
       </div>     
     </nav>
   </section>
   <!-- End menu -->
-  <!-- Start search box -->
-  <div id="mu-search">
-    <div class="mu-search-area">      
-      <button class="mu-search-close"><span class="fa fa-close"></span></button>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">            
-            <form class="mu-search-form">
-             <input type="search" placeholder="Type Your Keyword(s) & Hit Enter">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+ 
+ 
   <!-- End search box -->
  <!-- Page breadcrumb -->
  <section id="mu-page-breadcrumb">
@@ -211,34 +244,86 @@
    </div>
  </section>
  <!-- End breadcrumb -->
- <div class="container">
-  <h1>Bank Details</h1>
-  <form action="#" method="post">
-      <div class="form-group">
-          <label for="account-holder">Account Holder Name:</label>
-          <input type="text" id="account-holder" name="account-holder" required>
+
+
+ <!-- con cards -->
+
+ <div class="card-container ">
+  <!-- Card 1 -->
+  <div class="card">
+      <div class="avatar">
+          <img src="https://via.placeholder.com/60" alt="Avatar 1">
       </div>
-      <div class="form-group">
-          <label for="account-number">Account Number:</label>
-          <input type="text" id="account-number" name="account-number" required>
+      <h2>Student Registration</h2>
+      <p> +260 977783738</p>
+      <p>studentregistration@example.com</p>
+      <a href="mailto:john@example.com" class="button">CALL NOW</a>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+      <div class="avatar">
+          <img src="https://via.placeholder.com/60" alt="Avatar 2">
       </div>
-      <div class="form-group">
-          <label for="bank-name">Bank Name:</label>
-          <input type="text" id="bank-name" name="bank-name" required>
+      <h2>Student Registration</h2>
+      <p> +260 977783738</p>
+      <p>studentregistration@example.com</p>
+      <a href="mailto:john@example.com" class="button">CALL NOW</a>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+      <div class="avatar">
+          <img src="https://via.placeholder.com/60" alt="Avatar 3">
       </div>
-      <div class="form-group">
-          <label for="branch">Branch:</label>
-          <input type="text" id="branch" name="branch" required>
-      </div>
-      <div class="form-group">
-          <label for="ifsc-code">IFSC Code:</label>
-          <input type="text" id="ifsc-code" name="ifsc-code" required>
-      </div>
-      <div class="form-group">
-          <button type="submit">Submit</button>
-      </div>
-  </form>
+      <h2>Student Registration</h2>
+      <p> +260 977783738</p>
+      <p>studentregistration@example.com</p>
+      <a href="mailto:john@example.com" class="button">CALL NOW</a>
+  </div>
+
+  
+  <!-- Card 3 -->
+  <div class="card">
+    <div class="avatar">
+        <img src="https://via.placeholder.com/60" alt="Avatar 3">
+    </div>
+    
+    <h2>Student Registration</h2>
+    <p> +260 977783738</p>
+    <p>studentregistration@example.com</p>
+    <a href="mailto:john@example.com" class="button">CALL NOW</a>
 </div>
+
+
+
+  <!-- Card 3 -->
+  <div class="card">
+    <div class="avatar">
+        <img src="https://via.placeholder.com/60" alt="Avatar 3">
+    </div>
+    <h2>Student Registration</h2>
+    <p> +260 977783738</p>
+    <p>studentregistration@example.com</p>
+    <a href="mailto:john@example.com" class="button">CALL NOW</a>
+</div>
+
+
+  <!-- Card 3 -->
+  <div class="card">
+    <div class="avatar">
+        <img src="https://via.placeholder.com/60" alt="Avatar 3">
+    </div>
+    <h2>Student Registration</h2>
+    <p> +260 977783738</p>
+    <p>studentregistration@example.com</p>
+    <a href="mailto:john@example.com" class="button">CALL NOW</a>
+</div>
+
+  
+
+</div>
+    
 
   <!-- Start footer -->
   <footer id="mu-footer">
@@ -252,23 +337,19 @@
                 <h4>Information</h4>
                 <ul>
                   <li><a href="#">About Us</a></li>
-                  <li><a href="">Features</a></li>
-                  <li><a href="">Course</a></li>
-                  <li><a href="">Event</a></li>
-                  <li><a href="">Sitemap</a></li>
-                  <li><a href="">Term Of Use</a></li>
+                  <li><a href="">Short-Course</a></li>
+                  <li><a href="">History</a></li>
+                  <li><a href="">Location</a></li>
+                  <li><a href="">FAQ</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3">
               <div class="mu-footer-widget">
-                <h4>Student Help</h4>
+                <h4>Student Registration</h4>
                 <ul>
-                  <li><a href="">Get Started</a></li>
-                  <li><a href="#">My Questions</a></li>
-                  <li><a href="">Download Files</a></li>
-                  <li><a href="">Latest Course</a></li>
-                  <li><a href="">Academic News</a></li>                  
+                  <li><a href="">Student Registration</a></li>
+                  <li><a href="#">My Questions</a></li>                 
                 </ul>
               </div>
             </div>
@@ -286,10 +367,10 @@
               <div class="mu-footer-widget">
                 <h4>Contact</h4>
                 <address>
-                  <p>P.O. Box 320, Ross, California 9495, USA</p>
-                  <p>Phone: (415) 453-1568 </p>
-                  <p>Website: www.markups.io</p>
-                  <p>Email: info@markups.io</p>
+                  <p>P.O. Box </p>
+                  <p>Phone: </p>
+                  <p>Email:info@zcpit.ac.zm </p>
+                  <p>Email:marketing@zcpit.ac.zm</p>
                 </address>
               </div>
             </div>
@@ -297,17 +378,6 @@
         </div>
       </div>
     </div>
-    <!-- end footer top -->
-    <!-- start footer bottom -->
-    <div class="mu-footer-bottom">
-      <div class="container">
-        <div class="mu-footer-bottom-area">
-          <p>&copy; All Right Reserved. Designed by <a href="http://www.markups.io/" rel="nofollow">MarkUps.io</a></p>
-        </div>
-      </div>
-    </div>
-    <!-- end footer bottom -->
-  </footer>
   <!-- End footer -->
 
 
